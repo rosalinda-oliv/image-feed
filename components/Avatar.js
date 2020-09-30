@@ -2,7 +2,6 @@ import React from 'react'
 import { ColorPropType, StyleSheet, Text, View } from 'react-native'
 import PropTypes from 'prop-types';
 
-
 const Avatar = ({initials, size, backgroundColor}) => {
 
     const style = {
@@ -11,11 +10,10 @@ const Avatar = ({initials, size, backgroundColor}) => {
         borderRadius: size/2,
         backgroundColor,
     }
-    
+
     return (
         <View style={[styles.container, style]}>
             <Text style={styles.text}>{initials}</Text>
-            
         </View>
     )
 }
@@ -26,14 +24,14 @@ Avatar.propTypes ={
     backgroundColor: ColorPropType.isRequired,
 }
 
-export default Avatar
+export default Avatar;
 
 const styles = StyleSheet.create({
-    container: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    container:{
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     text:{
-        color: "white",
+        color:"white",
     }
 })

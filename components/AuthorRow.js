@@ -6,7 +6,9 @@ import Avatar from './Avatar';
 import getInitials from '../utils/getInitials';
 import getAvatarColor from '../utils/getAvatarColor';
 
-const AuthorRow = ({fullname, linktext, onPressLinkText}) => {
+const AuthorRow = ({ fullname, linktext, onPressLinkText }) => {
+
+    
     return (
         <View style={styles.container}>
             <Avatar 

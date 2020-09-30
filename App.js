@@ -1,16 +1,17 @@
-import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-import Constants from 'expo-constants';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import Constants from "expo-constants";
 
 import Card from './components/Card';
 import CardList from './components/CardList';
 
 const items = [
-  { id: 0, author: "Rosalinda Oliveira" },
-  { id: 1, author: "Joseph Nunez" }
-  { id: 2, author: "Johan Domingues" },
-  { id: 3, author: "Zafira Carillo" }
+  {id:0, author: "Joao Goncalves"},
+  {id:1, author: "Antonio Silva"},
+  {id:3, author: "Jose Silva"},
+  {id:4, author: "Antonio Antunes"},
+  {id:5, author: "Manuel Silva"},
 ]
 
 export default function App() {

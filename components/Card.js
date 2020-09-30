@@ -1,55 +1,54 @@
-import React from 'react'
-import { ActivityIndicator, Image, StyleSheet, View } from 'react-native'
-import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { ActivityIndicator, Image, StyleSheet, Text, View } from 'react-native'
+import PropTypes from 'prop-types';
 
-import AuthorRow from './AuthorRow'
+import AuthorRow from './AuthorRow';
 
-const Card = ({ fullname, linktext, onPressLinkText, image }) => {
+const Card = ({fullname, linktext, onPressLinkText, image}) => {
 
     const [loading, setLoading] = useState(true);
 
     return (
         <View>
-            <AuthorRow
+            <AuthorRow 
                 fullname={fullname}
                 linktext={linktext}
                 onPressLinkText={onPressLinkText}
             />
-            <View style={styles.image}>
-               {loading &&
-                <ActivityIndicator
-                    style={StyleSheet.absoluteFill}
-                    size="large"
-                />
+            <View style={styles.image} >
+                {loading && 
+                    <ActivityIndicator 
+                        style={StyleSheet.absoluteFill}
+                        size="large"
+                    />
                 }
-                <Image
+                <Image 
                     style={StyleSheet.absoluteFill}
                     source={image}
-                    onLoad={() => setLoading(false)}
+                    onLoad={()=>setLoading(false)}
                 />
             </View>
-
         </View>
     )
 }
 
-export default Card
+export default Card;
 
 Card.propTypes = {
     fullname: PropTypes.string.isRequired,
     linktext: PropTypes.string,
-    onPressLinkText: PropTypes.func,
-    image: Image.propTypes.source.isRequired
+    onPressLinktext:PropTypes.func,
+    image: Image.propTypes.source.isRequired,
 }
 
-Card.defaultProps = {
+Card.defaultProps= {
     linktext: "",
-    onPressLinkText: () => { },
+    onPressLinkText: () => {},
 }
 
 const styles = StyleSheet.create({
-    image: {
-        aspectRatio: 1,
-        backgroundColor: "rgba(0,0,0,0.05)",
+    image:{
+        aspectRatio:1,
+        backgroundColor:"rgba(0,0,0,0.05)",
     }
 })
